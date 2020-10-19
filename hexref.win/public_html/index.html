@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HEXREF | HEX staking with referral system</title>
+    <meta name="keywords"
+    content="refhex, ref hex, referral system, hex, hex games, fun, win, hex stake, hex crypto, games">
+    <meta name="description" content="HEXREF | Reward and onboard HEX users post BPD via HEX staking">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="lib/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="lib/animate/animate.css">
+    <link rel="stylesheet" href="css/style.css?ver=1.1">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115508681-8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-115508681-8');
+</script>
+
+
+  </head>
+  <body>
+  
+    <section id="nav-bar">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">
+          <div class="navTitle"><img src="img/hexLogo.png" alt="HEX logo"><i
+              style="width: 50px; text-shadow:0px 0px 5px black; position: relative; transform: translate(-54px,0px)"
+              class="fa fa-users text-center"></i><span style="margin-left:-50px;">&nbsp;<b>HEX</b>REF</span></div>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <span style="font-size:12px;"><a style="text-decoration: none; color:white" href="https://go.hex.win/transform/?r=0x8080dbEb46A263f52b616cB69475Ab26Cb29be98" target="_blank"><b class="hexLink">CLICK FOR 10% MORE FREE HEX!</b></a></span>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="https://hex.win/?r=0x8080dbEb46A263f52b616cB69475Ab26Cb29be98" target="_blank">HEX Website</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://go.hex.win/transform/?r=0x8080dbEb46A263f52b616cB69475Ab26Cb29be98"
+                target="_blank">HEX AA Lobby</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://hexviz.xyz" target="_blank">HEX Visualizer</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://hexotc.win" target="_blank">HEX Trade</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://hexpool.win" target="_blank">HEX Pool</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://t.me/hexcrypto" target="_blank">HEX Social</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="indexv1.html">v1</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </section>
+     <section class="banner">
+       <div id="successMsg"></div>
+       <div id="errorMsg"></div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
+              <div class="cont">
+                <div>
+                    <i class="questionMark fa fa-4x fa-users"></i>
+                  <b style="font-size:22px"><b>HEX</b>REF Staking</b>
+                  <br/>
+                </div>
+                <br/><br/>
+                <div>
+                  <b style="font-size:22px">Stake HEX&nbsp;<img style="width:25px; margin-bottom:7.5px" src="img/hexLogo.png"/></b>
+                  <br/>
+                    <input style="font-weight: 700" class="form-control text-right" type="number" id="hexStake"
+                    placeholder="HEX Amount" min="0" step="any"></input><br/>
+                    <input style="font-weight: 700" class="form-control text-right" type="number" id="hexStakeDays"
+                    placeholder="Stake Days" min="0" max="5555" step="any" onchange="CheckDays(this)"></input><br/>
+                    <input style="font-weight: 700;" class="form-control text-right" type="number" id="refShare"
+                    placeholder="Referrer Share %" min="0.1" max="50" step="any" onchange="SetRate(this)"></input>
+                    <br/>
+                    <span class="addressBreak" id="currentRef"></span>
+                </div>
+                <img style='width:15px; margin-bottom:2.5px;' src='img/hexLogo.png'/> Balance: <span id="walletBalance"></span>
+                <br/><br/>
+                <button id="approveBtn" class="takeBtn btn-primary" onclick="ApproveHex()"><i class="fa fa-thumbs-up"></i>&nbsp;Approve HEX</button>&nbsp;
+                <button class="takeBtn btn-primary" onclick="StakeHex()"><i class="fa fa-lock"></i>&nbsp;Stake HEX</button>
+                <br/><br/>
+                <div class="info text-left">
+                  <i class="fa fa-info-circle"></i>&nbsp; Reward others with a chosen % of your staking interest!<br/>Stakes from <b>HEX</b>REF are made to the official HEX contract via <a href="https://etherscan.io/address/0xb2171EB10749f68458420e31798146DaA4dBF252#code" target="_blank"><b>this verified contract</a></b>.<br/>Stakes can be managed below or directly on Etherscan.
+                  <br/><br/>
+                  Connected wallet: <span class="addressBreak" id="userAddress">N/A<div style="width:100%; text-align: center;"><button class="takeBtn btn-primary" onclick="Connect()">Connect</button></div></span>
+                  <br/>
+                  Your ref: <b>https://hexref.win/?r=<span class="addressBreak" id="refAddress">YOUR_ETH_ADDR</span></b>
+                </div>
+              </div>
+              <br/><br/>
+            </div>
+            <div class="col-12 col-md-6">
+              <b style="font-size:22px"><i class="fa fa-trophy"></i>&nbsp;Referrer Leaderboard<br/></b>
+              <b>Onboard new HEX users and top the leaderboard!</b>
+              <table class="text-center" style="width:100%; font-size:16px; color:white;" id="refLeaderboard">
+                <thead>
+                  <tr>
+                      <th>Referrer</th>
+                      <th>Referral HEX Staked</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td></td><td>Loading...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <br/>
+          <b style="font-size:22px; color:black;">Users: <span id="userCount">0</span></b><br/> 
+          <b style="font-size:22px; color:black;">Total Stakes: <span id="totalStakeCount">0</span></b>   
+          <br/><br/>
+          <b style="font-size:22px; color:black;">Your Active Stakes: <span id="activeStakeCount">0</span></b>
+          <div class="table-wrapper-scroll-y my-custom-scrollbar">
+          <table id="stakeTable" class="table table-bordered table-striped mb-0">
+                  <thead>
+                            <tr>
+                                <th scope="col" width="5%">Stake ID</th>
+                                <th scope="col" width="20%">Amount</th>
+                                <th scope="col" width="15%">Interest</th>
+                                <th scope="col" width="15%">Days</th>
+                                <th scope="col" width="15%">Till End</th>
+                                <th scope="col" width="10%">Referrer</th>
+                                <th scope="col" width="20%">End Stake</th>
+                            </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td></td><td></td><td>Loading...</td><td></td><td></td></tr>
+                  </tbody>
+          </table>
+          </div>
+          <br/>
+          <b style="font-size:22px; color:black;">Your Referrals: <span id="refStakeCount">0</span></b></b>
+          <div class="table-wrapper-scroll-y my-custom-scrollbar">
+          <table style="margin-left:-20px;" id="refTable" class="table table-bordered table-striped mb-0">
+                  <thead>
+                            <tr>
+                                <th style="visibility: collapse;" width="0%"></th>
+                                <th scope="col" width="10%">User</th>
+                                <th scope="col" width="15%">Amount</th>
+                                <th scope="col" width="10%">Days</th>
+                                <th scope="col" width="10%">Till End</th>
+                                <th scope="col" width="15%">Interest</th>
+                                <th scope="col" width="15%">Your Rewards</th>
+                                <th scope="col" width="25%">Good Accounting</th>
+                            </tr>
+                  </thead>
+                  <tbody>
+                      <tr><td></td><td></td><td></td><td>Loading...</td><td></td><td></td><td></td></tr>
+                  </tbody>
+          </table>
+          </div>
+        </div>
+        <br/></br>
+        <div class="gameInfo container">
+          <div class="row justify-content-center">
+            <div style="padding-bottom:25px" class="col-12 col-lg-8">
+            <h4><i class="fa fa-bookmark"></i>&nbsp;About</h4>
+            <hr style="width:70%; margin-right: 30%"/>
+              <p><b>
+                <i style="width:20px; text-align: center;" class="fa fa-lock"></i>&nbsp;Stake your HEX to reward referrers with staking interest, paid on end stake.<br/>
+                <i style="width:20px; text-align: center;" class="fa fa-users"></i>&nbsp; Keep growing the HEX community via this alternative referral system post BPD!<br/>
+                <i style="width:20px; text-align: center;" class="fa fa-question-circle"></i>&nbsp;Referrers receive a minimum of 0.1% staking interest, of which 10% is allocated to developers (min 0.01%).<br/>
+                <i style="width:20px; text-align: center;" class="fa fa-thumbs-up"></i>&nbsp;Emergency end-staking is disabled. Good accounting, share rate, interest, penalties and BPD rewards remain as normal.<br/>
+                <i style="width:20px; text-align: center;" class="fa fa-link"></i>&nbsp;Referrers are incentivised to run good accounting, e.g. if penalties eat into your principal, refs receive nothing.<br/>
+              </b></p>
+            </div>
+          </div>
+        </div>
+     </section>
+    <section id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-4 footer-box">
+            <div id="social" class="text-left">
+              <p>Learn More About HEX</p>
+              <div class="social-icons">
+                <a href="https://hex.win/?r=0x8080dbEb46A263f52b616cB69475Ab26Cb29be98" target="_blank"><i
+                    class="fa fa-link"></i></a>
+                <a href="https://go.hex.win/?r=0x8080dbEb46A263f52b616cB69475Ab26Cb29be98" target="_blank"><i
+                    class="fa fa-wallet"></i></a>
+                <a href="https://hexviz.xyz" target="_blank"><i class="fa fa-eye"></i></a>
+                <a href="https://hexotc.win" target="_blank"><i class="fa fa-handshake"></i></a>
+                <a href="https://t.me/hexcrypto" target="_blank"><i class="fab fa-2x fa-telegram"></i></a>
+              </div>
+              <div class="text-left">
+                <p style="font-size:22px;" class="copyright">
+                  <a href="https://go.hex.win/transform/?r=0x8080dbEb46A263f52b616cB69475Ab26Cb29be98" target="_blank">Buy HEX</a><br /><br />
+                  <a href="https://go.hex.win/stake/?r=0x8080dbEb46A263f52b616cB69475Ab26Cb29be98" target="_blank">Stake HEX</a><br /><br />
+                  <a href="https://go.hex.win/claim/?r=0x8080dbEb46A263f52b616cB69475Ab26Cb29be98" target="_blank">Claim HEX</a><br /><br />
+                  <a href="https://hex.win/?r=0x8080dbEb46A263f52b616cB69475Ab26Cb29be98" target="_blank">Learn HEX</a><br /><br />
+                  <a href="https://hexviz.xyz" target="_blank">Watch HEX</a><br /><br />
+                  <a href="https://hexotc.win" target="_blank">Trade HEX</a><br /><br />
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-8 footer-box">
+            <br />
+            <img style="float:right; width:25px;" src="img/hexLogo.png" alt="">
+            <p class="text-right copyright"><b>HEX</b>REF is a community made project.<br/><br/>
+              Donations would be HEXcellent @ <span class="addressBreak">0x8080dbEb46A263f52b616cB69475Ab26Cb29be98</span>
+            </p>
+            <div class="row text-right float-right">
+              <div class="col-12">
+                <input class="form-control text-right" type="number" id="ethDonate" name="donateEthValue"
+                  placeholder="ETH Amount" min="0" value="0.01"></input>
+              </div>
+              <div class="col-12 text-right">
+                <button class="takeBtn btn-primary" onclick="DonateEth()">Donate ETH</button><br /><br />
+              </div>
+              <div class="col-12">
+                <input class="form-control text-right" type="number" id="hexDonate" name="donateHexValue"
+                  placeholder="HEX Amount" min="0" value="5000"></input>
+              </div>
+              <div class="col-12 text-right">
+                <button class="takeBtn btn-primary" onclick="DonateHex()">Donate HEX</button><br /><br />
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+      </div>
+    </section>
+    <script type="text/javascript" src="js/web3.min.js"></script>
+    <script type="text/javascript" src="js/web3Connect.js?ver=1.4"></script>
+    <script type="text/javascript" src="js/main.js?ver=2.1.4"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script>
+    new WOW().init();
+    </script>
+  </body>
+</html>

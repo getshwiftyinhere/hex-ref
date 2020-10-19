@@ -1,0 +1,610 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow-x:hidden;
+  }
+
+  .influencer{
+    width:125px;
+    height:125px;
+    border-radius:50%;
+    border:5px solid white;
+    margin-bottom:5px;
+    box-shadow:0px 5px 10px black;
+  }
+  #nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  
+  .navTitle {
+    font-size: 2em;
+    color: white;
+    font-weight: 600;
+  }
+  
+  .gameInfo{
+    color:black;
+  }
+  
+  .info{
+    font-size:14px;
+  }
+  .navbar {
+    background: linear-gradient(to top right, #111111, #444444);
+    padding: 0 !important;
+  }
+  
+  .navbar-brand img {
+    height: 50px;
+    padding-left: 3rem;
+    margin-top: -10px;
+  }
+  
+  @media(max-width:468px) {
+    .navbar-brand img {
+      height: 50px;
+      padding-left: 1rem;
+      margin-top: -10px;
+    }
+  }
+  .my-custom-scrollbar {
+    position: relative;
+    max-height: 750px;
+    overflow: auto;
+    }
+    .table-wrapper-scroll-y {
+    display: block;
+    }
+  .navbar-nav {
+    margin-right: 3rem;
+  }
+  
+  .navbar-nav li {
+    padding: 0 1rem;
+  }
+  
+  .navbar-nav li {
+    padding: 0 1rem;
+  }
+  
+  .navbar-nav .nav-item .nav-link {
+    color: #fff !important;
+    font-weight: 600;
+    float: right;
+    text-align: left;
+  }
+  
+  .fa-bars {
+    color: #fff !important;
+    font-size: 25px !important;
+  }
+  
+  .navbar-toggler {
+    outline: none !important;
+  }
+  
+  /* --------- Banner ---------- */
+  .banner {
+    background: linear-gradient(to top right, #fbff00, #ff00ea);
+    color: #fff;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    min-height:100%;
+  }
+  
+  .promo-title {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-top: 3em;
+  }
+  
+  @media(max-width:468px) {
+    .promo-title {
+      font-size: 2.5rem;
+      margin-top: 2.5em;
+    }
+  }
+  
+  .join-title {
+    font-size: 1.44rem;
+  }
+  
+  .link-play {
+    font-size: 16px;
+    text-decoration: none;
+  }
+  
+  .link-play:hover {
+    text-shadow: 0px 0px 2px #fbff00;
+    color: white;
+    text-decoration: none !important;
+  }
+  
+  .play-btn {
+    width: 45px;
+    margin: 20px 0;
+    margin-right: 1.5em;
+    text-decoration: none !important;
+    transition: transform 1.2s;
+  }
+  
+  .playBtn {
+    animation-name: playPulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+  
+  .play-btn:hover {
+    color: #444;
+    text-decoration: none !important;
+    transform: scale(1.2);
+  }
+  
+  .banner a {
+    color: #fff;
+    text-decoration: none !important;
+  }
+  
+  .img-fluid {
+    margin-top: 4rem;
+  }
+  
+  .bottom-img {
+    width: 100%;
+  }
+  
+  .title::after {
+    content: '';
+    background: linear-gradient(to top right, #fbff00, #ff00ea);
+    height: 8px;
+    width: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 70px;
+    transform: translateY(23px);
+  }
+  
+  #services .btn-primary:hover {
+    transform: scale(1.2);
+  }
+  
+  /* -----------   About -------------*/
+  #about {
+    color: #111111;
+    background-color: #ffffff;
+    padding-bottom: 6rem;
+    padding-top: 3rem;
+  }
+  
+  .about-title {
+    font-size: 1.6em;
+    margin-top: 5%;
+    font-weight: 600;
+  }
+  
+  .about-title i {
+    animation-name: playPulse;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+  }
+  
+  .about-title i:hover {
+    cursor: pointer;
+  }
+  
+  #about ul li {
+    margin: 10px 0;
+  }
+  
+  #about ul {
+    margin-left: 20px;
+  }
+  
+  /* ----- Footer ------*/
+  #footer {
+    background: linear-gradient(to top right, #111111, #444444);
+    color: #fff;
+  }
+  
+  .footer-img {
+    width: 100%;
+  }
+  
+  .footer-box {
+    padding: 20px;
+  }
+  
+  .footer-box img {
+    width: 4rem;
+    margin-bottom: 20px;
+  }
+  
+  .footer-box .fa {
+    margin-right: 8px;
+    font-size: 25px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    padding-top: 7px;
+    border-radius: 2px;
+    display: inline-block;
+  }
+  
+  .footer-box .form-control {
+    box-shadow: none !important;
+    border: none;
+    border-radius: 0;
+    margin: 20px 0;
+  }
+  
+  .footer-box .btn-primary {
+    box-shadow: none !important;
+    width:auto;
+    min-width: 8rem;
+    min-height: 50px;
+    border: 5px white solid;
+    border-radius: 50px;
+    background: linear-gradient(to top right, #fbff00, #ff00ea);
+    color: #fff;
+    transition: transform 1.2s;
+    font-weight: bold;
+  }
+  
+  .footer-box .btn-primary:hover {
+    transform: scale(1.2);
+    color: #fff;
+  }
+  
+  /*-------- Social Media icons ---------- */
+  #social p {
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  
+  .copyright {
+    padding-top: 2%;
+    font-size: 15px;
+  }
+  
+  .copyright a {
+    color: #fff;
+  }
+  
+  .copyright a i {
+    color: #fff;
+  }
+  
+  .copyright a i:hover {
+    color: #fff !important;
+  }
+  
+  .copyright a:hover {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  a:hover {
+    text-decoration: none;
+    color: white;
+    text-shadow: 0px 0px 2px #fbff00;
+  }
+  
+  /*--------------------------*/
+  
+  .takeBtn {
+    box-shadow: none !important;
+    width:auto;
+    min-width: 10rem;
+    min-height: 50px;
+    border: 5px white solid;
+    border-radius: 50px;
+    background: linear-gradient(to top right, #fbff00, #ff00ea);
+    color: white;
+    font-weight: bold;
+    transition: transform 1.2s;
+    padding-left:10px;
+    padding-right:10px;
+  }
+  
+  .takeBtn:hover {
+    transform: scale(1.2);
+    color: #fff;
+    border: 10px white solid;
+    transition:all linear 0.5s;
+  }
+  
+  .revealBtn {
+    box-shadow: none !important;
+    width:auto;
+    min-width: 10rem;
+    min-height: 50px;
+    border: 5px white solid;
+    border-radius: 50px;
+    background: linear-gradient(to top right, #fbff00, #ff00ea);
+    color: white;
+    font-weight: bold;
+    transition: transform 1.2s;
+    padding-left:10px;
+    padding-right:10px;
+  }
+  
+  .revealBtn:hover {
+    transform: scale(1.2);
+    color: #fff;
+    border: 10px white solid;
+    transition:all linear 0.5s;
+  }
+  
+  .approveBtn {
+    box-shadow: none !important;
+    width:auto;
+    min-width: 8rem;
+    min-height: 50px;
+    border: 5px white solid;
+    border-radius: 50px;
+    background: linear-gradient(to top right, #fbff00, #ff00ea);
+    color: white;
+    font-weight: bold;
+    transition: transform 1.2s;
+    padding-left:10px;
+    padding-right:10px;
+  }
+  
+  .approveBtn:hover {
+    transform: scale(1.2);
+    color: #fff;
+  }
+  
+  .addressBreak {
+    word-wrap: break-word;
+    word-break: break-all;
+    font-weight: bold;
+  }
+  
+  .container {
+    perspective: 800px;
+  }
+  
+  #menu {}
+  
+  #main {
+    display: none;
+  }
+  
+  #aboutMenu {}
+  
+  #mainMarket {
+    display: none;
+    text-align: center;
+    padding-bottom: 50px;
+  }
+  
+  #myMarket {
+    display: none;
+    text-align: center;
+    padding-bottom: 50px;
+  }
+  
+  #closedMarket {
+    display: none;
+    text-align: center;
+    padding-bottom: 50px;
+  }
+  
+  
+  #errorMsg {
+    display: none;
+    color: red;
+    position: fixed;
+    top:0px;
+    left:50%;
+    transform: translate(-50%, 0%);
+    background-color: black;
+    border-radius: 2px;
+    margin-bottom: 5px;
+    padding: 5px 10px 5px 10px;
+    z-index:99;
+    font-weight: 700;
+  }
+  
+  #successMsg {
+    display: none;
+    color: green;
+    position: fixed;
+    top:0px;
+    left:50%;
+    transform: translate(-50%, 0%);
+    background-color: black;
+    border-radius: 2px;
+    margin-bottom: 5px;
+    padding: 5px 10px 5px 10px;
+    z-index:99;
+    font-weight: 700;
+  }
+  
+  #rate {
+    font-weight: 700;
+  }
+  
+  #userAddress {
+    word-break: break-all;
+    word-wrap: break-word;
+    font-weight: 700;
+  }
+  
+  .makeOffer {
+    font-size: 20px;
+  }
+  
+  .openOffers {
+    font-size: 20px;
+  }
+  
+  .openOffers:hover {}
+  
+  .orderTypes {}
+  
+  .orderTypes input {}
+  
+  .marketCont {
+    max-height: 750px;
+    overflow-y: scroll;
+    overflow-x: scroll;
+  }
+  
+  .tableCont {
+    padding: 15px;
+    border: 5px solid black;
+    border-radius: 5px;
+    margin-bottom: 25px;
+  }
+  
+  .marketTitle {
+    font-size: 22px;
+  }
+  
+  .contractBalances {
+    font-weight: bold;
+  }
+  
+  #offersTitle {
+  
+  }
+  
+  #hexTake {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    min-width: 350px;
+    width: 30%;
+    max-width: 1000px;
+    z-index: 99;
+    border: 5px black solid;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px black;
+    padding: 15px;
+  }
+  
+  table {
+    font-size: 16px;
+    color:black;
+    max-height: 750px;
+  }
+  
+  .tableRate{
+    font-weight: bold;
+  }
+  th tr td {
+    padding: 2px;
+    color:black;
+  }
+  
+  th {border:none}
+  
+  tr {
+    border-top:5px white solid;
+  }
+  
+  td {border:none;}
+  
+  td i:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    text-shadow: 0px 0px 2px #fbff00;
+    transition: all 0.3s;
+  }
+  
+  iframe{
+    border: 0px none; 
+    margin-left: 0px; 
+    height: 700px; 
+    margin-top: -100px; 
+    width: 100%;
+  }
+  
+  @media(max-width:785px){
+    iframe{
+      height: 1150px;
+    }
+  }
+  
+  #tornadoCash{
+    background: white;
+    color:black;
+    padding-bottom:2rem;
+  }
+  
+  @keyframes playPulse {
+    0% {
+      transform: scale(1);
+    }
+  
+    50% {
+      transform: scale(1.2);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+  .hexLink {
+    animation-name:pulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  .questionMark {
+    animation-name:pulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+  
+  @keyframes pulse {
+    0% {
+      text-shadow:0px 0px 0px yellow;
+    }
+  
+    50% {
+      text-shadow:0px 0px 5px yellow;
+    }
+  
+    100% {
+      text-shadow:0px 0px 0px yellow;
+    }
+  }
+
+  #loading{
+    animation-name:pulse;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    font-weight: 700;
+  }
+
+  .cont{
+    border:white solid 5px;
+    border-radius:5px;
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 10px 10px black;
+    min-height: 500px;
+    padding:10px;
+  }
+
+  .balanceQuestion:hover{
+    cursor: pointer;
+  }
+
+  #walletBalance{
+    font-weight: 700;
+  }
