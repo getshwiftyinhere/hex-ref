@@ -86,7 +86,7 @@ async function EndStake(elem) {
     }
     var stakeFinished = await hexrefContract.methods.isStakeFinished(stakeId).call();
     if (!stakeFinished) {
-      var conf = await confirm("This stake has not yet finished, are you sure you want to end it?<br/> Note: 24 hours is also appended to account for stake pending time.");
+      var conf = await confirm("This stake has not yet finished, ending this stake will result in penalties.\n\nAre you sure you want to end it?\n\n Note: 24 hours is also appended to account for stake pending time.");
       if(conf){
         hexrefContract.methods.EndStake(stakeId).send({
           from: activeAccount
