@@ -86,18 +86,30 @@ async function EndStake(elem) {
     }
     var stakeFinished = await hexrefContract.methods.isStakeFinished(stakeId).call();
     if (!stakeFinished) {
-      errorMessage("Cannot emergency end-stake!<br/> Note: 24 hours is also appended to account for stake pending time.");
-      return;
+      var conf = await confirm("This stake has not yet finished, are you sure you want to end it?<br/> Note: 24 hours is also appended to account for stake pending time.");
+      if(conf){
+        hexrefContract.methods.EndStake(stakeId).send({
+          from: activeAccount
+        }).then(function () {
+            successMessage("Stake ended successfully!");
+            setTimeout(function(){
+              ShowBalance();
+              PopulateStakeTable();
+            }, 2000);
+        });
+      }
     }
-    hexrefContract.methods.EndStake(stakeId).send({
-      from: activeAccount
-    }).then(function () {
-        successMessage("Stake ended successfully!");
-        setTimeout(function(){
-          ShowBalance();
-          PopulateStakeTable();
-        }, 2000);
-    });
+    else{
+      hexrefContract.methods.EndStake(stakeId).send({
+        from: activeAccount
+      }).then(function () {
+          successMessage("Stake ended successfully!");
+          setTimeout(function(){
+            ShowBalance();
+            PopulateStakeTable();
+          }, 2000);
+      });
+    }
   }
 }
 
@@ -105,6 +117,10 @@ async function GoodAccounting(elem) {
   if (typeof web3 !== "undefined") {
     var stakeId = parseInt(elem.parentElement.parentElement.firstElementChild.innerHTML);
     var stake = await hexrefContract.methods.stakes(stakeId).call();
+    if (stake.stakeEnded){
+      successMessage("Stake has already been ended by user.");
+      return;
+    }
     if (!stake.isStaking || stake.isActive) {
       errorMessage("No stake to end");
       return;
